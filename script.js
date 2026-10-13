@@ -1,368 +1,168 @@
-// 1. Create a var variable called name and initialize it with your name
+// Part 1: Variables - var, let, const
+
+var num1 = 10;
+num1 = 20;
+console.log("1.", num1);
+
+var num2 = 30;
+var num2 = 50;
+console.log("2.", num2);
+
+let num3 = 100;
+num3 = 200;
+console.log("3.", num3);
+
+const age = 20;
+console.log("4.", age);
+
+// 5. Valid and invalid declarations
+var a = 10;
+var a = 20;
+
+let b = 30;
+b = 40;
+// let b = 50; // Invalid in the same scope
+
+const c = 60;
+// c = 70; // Invalid
+
+console.log("5. var:", a, "let:", b, "const:", c);
 
 var name = "Saravanan";
-console.log(name);
+let myAge = 20;
+const city = "Madurai";
+
+console.log("6.", name, myAge, city);
 
 
-// 2. Create a var variable called age and reassign it
+// Part 2: Printing Statements and Data Types
 
-var age = 25;
-age = 30;
-console.log(age);
+// 7. Run in a browser
+// let userName = prompt("Enter your name");
+// alert(userName);
 
+// 8. Run in a browser
+// let userAge = prompt("Enter your age");
+// console.log(userAge);
 
-// 3. Create a var variable called city and reassign it
-
-var city = "Chennai";
-city = "Bangalore";
-console.log(city);
-
-
-// 4. Redeclare a var variable
-
-var salary = 25000;
-var salary = 35000;
-console.log(salary);
-
-
-// 5. Assign, reassign and redeclare a var variable
-
-var result = 10;
-result = 20;
-var result = 30;
-console.log(result);
-
-
-// 6. Redeclare department
-
-var department = "ECE";
-var department = "CSE";
-console.log(department);
-
-
-// 7. Reassign mark
-
-var mark = 50;
-mark = 75;
-console.log(mark);
-
-
-// 8. Redeclare company
-
-var company = "TCS";
-var company = "Infosys";
-console.log(company);
-
-
-// 9. Declare first and initialize later
-
-var value;
-
-value = 100;
-console.log(value);
-
-
-// 10. Change a var value three times
-
-var number = 10;
-
-number = 20;
-number = 30;
-number = 40;
-
-console.log(number);
-
-
-// 11. Create a let variable called age
-
-let age1 = 20;
-console.log(age1);
-
-
-// 12. Reassign salary using let
-
-let salary1 = 30000;
-salary1 = 40000;
-console.log(salary1);
-
-
-// 13. Change a name using let
-
-let name1 = "Saravanan";
-name1 = "Naveen";
-console.log(name1);
-
-
-// 14. Change department
-
-let department1 = "ECE";
-department1 = "CSE";
-console.log(department1);
-
-
-// 15. Change mark
-
-let mark1 = 60;
-mark1 = 90;
-console.log(mark1);
-
-
-// 16. Declare let without a value
-
-let value1;
-
-value1 = 100;
-console.log(value1);
-
-
-// 17. Try to redeclare let
-
-let number1 = 10;
-
-// let number1 = 20;
-
-console.log(number1);
-
-
-// 18. Reassign city two times
-
-let city1 = "Chennai";
-
-city1 = "Bangalore";
-city1 = "Madurai";
-
-console.log(city1);
-
-
-// 19. Create three let variables
+// 9. Run in a browser
+// let answer = confirm("Do you know JavaScript?");
+// console.log(answer);
 
 let studentName = "Saravanan";
 let studentAge = 20;
-let studentCity = "Madurai";
+let isStudent = true;
+let result;
 
-console.log(studentName);
-console.log(studentAge);
-console.log(studentCity);
+console.log("10.", studentName, typeof studentName);
+console.log("10.", studentAge, typeof studentAge);
+console.log("10.", isStudent, typeof isStudent);
+console.log("10.", result, typeof result);
 
+let fruits = ["Apple", "Mango", "Banana", "Orange", "Grapes"];
 
-// 20. Initialize, reassign and try to redeclare let
+console.log("11.", fruits);
+console.log("11. First fruit:", fruits[0]);
+console.log("11. Last fruit:", fruits[fruits.length - 1]);
 
-let result1 = 10;
+let items = {
+    fruits: ["Apple", "Mango", "Banana"],
+    electronics: ["Laptop", "Mobile", "TV"],
+    vegetable: "Carrot"
+};
 
-result1 = 20;
+console.log("12. Fruits:", items.fruits);
+console.log("12. Electronics:", items.electronics);
+console.log("12. Vegetable:", items.vegetable);
 
-// let result1 = 30;
 
-console.log(result1);
+// Part 3: Arithmetic Operators
 
+let x = 15;
+let y = 4;
 
-// 21. Create a const age
+console.log("13. Addition:", x + y);
+console.log("13. Subtraction:", x - y);
+console.log("13. Multiplication:", x * y);
+console.log("13. Division:", x / y);
 
-const age2 = 25;
-console.log(age2);
+let remainder = 27 % 5;
+console.log("14.", remainder);
 
+let power = 3 ** 4;
+console.log("15.", power);
 
-// 22. Create a const salary
+let preInc = 10;
+console.log("16.", ++preInc);
 
-const salary2 = 50000;
-console.log(salary2);
+let preDec = 10;
+console.log("17.", --preDec);
 
+let postX = 5;
+let postY = postX++;
 
-// 23. Create a const company
+console.log("18. x:", postX);
+console.log("18. y:", postY);
 
-const company1 = "Stackly";
-console.log(company1);
 
+// Part 4: Pre/Post Increment and Decrement
 
-// 24. Try to reassign const
+let q19 = 4;
+console.log("19.", q19++);
+console.log("19.", q19);
 
-const value2 = 100;
+let q20 = 4;
+console.log("20.", ++q20);
+console.log("20.", q20);
 
-// value2 = 200;
+let q21 = 8;
+let b21 = q21++;
+console.log("21. a:", q21);
+console.log("21. b:", b21);
 
-console.log(value2);
+let q22 = 8;
+let b22 = ++q22;
+console.log("22. a:", q22);
+console.log("22. b:", b22);
 
+let q23 = 6;
+let b23 = q23--;
+console.log("23. a:", q23);
+console.log("23. b:", b23);
 
-// 25. Try to redeclare const
+let q24 = 6;
+let b24 = --q24;
+console.log("24. a:", q24);
+console.log("24. b:", b24);
 
-const number2 = 100;
+let q25 = 2;
+q25++;
+q25++;
+console.log("25.", q25);
 
-// const number2 = 200;
+let q26 = 10;
+--q26;
+--q26;
+console.log("26.", q26);
 
-console.log(number2);
+let q27 = 3;
+q27 = q27++;
+console.log("27.", q27);
 
-
-// 26. Create a const college
-
-const college = "ABC College";
-console.log(college);
-
-
-// 27. Create three const variables
-
-const name2 = "Saravanan";
-const age3 = 20;
-const department2 = "CSE";
-
-console.log(name2);
-console.log(age3);
-console.log(department2);
-
-
-// 28. Use var, let and const together
-
-var firstName = "Saravanan";
-let myAge = 20;
-const myCompany = "Stackly";
-
-console.log(firstName);
-console.log(myAge);
-console.log(myCompany);
-
-
-// 29. Print your name
-
-console.log("Saravanan");
-
-
-// 30. Store age and print it
-
-let myAge1 = 20;
-console.log(myAge1);
-
-
-// 31. Print 100
-
-console.log(100);
-
-
-// 32. Create three variables and print them
-
-let userName = "Saravanan";
-let userAge = 20;
-let userCity = "Madurai";
-
-console.log(userName);
-console.log(userAge);
-console.log(userCity);
-
-
-// 33. Create and print a message
-
-let message = "Hello JavaScript";
-console.log(message);
-
-
-// 34. Print a value, change it and print again
-
-let score = 10;
-
-console.log(score);
-
-score = 20;
-
-console.log(score);
-
-
-// 35. Print name, age and qualification
-
-let myName = "Saravanan";
-let myAge2 = 20;
-let qualification = "B.E";
-
-console.log(myName);
-console.log(myAge2);
-console.log(qualification);
-
-
-// 36. Display a message using alert
-
-alert("Welcome to JavaScript");
-
-
-// 37. Display username using alert
-
-let userName1 = "Saravanan";
-alert(userName1);
-
-
-// 38. Display age using alert
-
-let userAge1 = 20;
-alert(userAge1);
-
-
-// 39. Display Welcome Naveen
-
-let message1 = "Welcome Naveen";
-alert(message1);
-
-
-// 40. Display qualification
-
-let qualification1 = "B.E";
-alert(qualification1);
-
-
-// 41. Ask the user for their name
-
-let name3 = prompt("What is your name?");
-console.log(name3);
-
-
-// 42. Ask the user for their age
-
-let age4 = prompt("How old are you?");
-alert(age4);
-
-
-// 43. Ask for qualification
-
-let qualification2 = prompt("What is your qualification?");
-console.log(qualification2);
-
-
-// 44. Ask for name and show it
-
-let name4 = prompt("What is your name?");
-alert(name4);
-
-
-// 45. Ask for age and print it
-
-let age5 = prompt("What is your age?");
-console.log(age5);
-
-
-// 46. Ask if the user knows programming
-
-let programming = confirm("Do you know programming?");
-console.log(programming);
-
-
-// 47. Display a message using document.writeln
-
-let batch = "Welcome to Batch 41";
-document.writeln(batch);
-
-
-// 48. Ask if the user wants to continue
-
-let continueProgram = confirm("Do you want to continue?");
-console.log(continueProgram);
-
-
-// 49. Use console methods
-
-console.log("This is a normal message");
-console.warn("This is a warning message");
-console.error("This is an error message");
-
-
-// 50. Use console methods and clear the console
-
-console.log("Normal message");
-console.warn("Warning message");
-console.error("Error message");
-
-console.clear();
+let q28 = 4;
+let d28 = q28++;
+console.log("28. c:", q28);
+console.log("28. d:", d28);
+
+let e29 = 5;
+let f29 = --e29;
+console.log("29. e:", e29);
+console.log("29. f:", f29);
+
+let a30 = 5;
+let b30 = a30++;
+let c30 = ++a30;
+
+console.log("30. a:", a30);
+console.log("30. b:", b30);
+console.log("30. c:", c30);
