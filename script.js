@@ -1,305 +1,297 @@
 
-// Part 1: Variables and Data Types
+console.log("========== PART 1: FUNCTIONS AND PARAMETERS ==========");
 
-// 1. var, let and const
-var number = 10;
-var number = 20;
-number = 30;
-console.log("1. var:", number);
+// 1. Welcome function
+function welcome() {
+    console.log("Welcome to JavaScript");
+}
+welcome();
 
-let score = 40;
-score = 50;
-// let score = 60; // Redeclaration is not allowed in the same scope
-console.log("1. let:", score);
+// 2. Student details
+function studentDetails(name, age, cgpa) {
+    console.log("Name:", name, "Age:", age, "CGPA:", cgpa);
+}
+studentDetails("Arun", 20, 8.5);
+studentDetails("Kumar", 21, 9.1);
 
-const pi = 3.14;
-// pi = 3.15; // Reassignment is not allowed
-console.log("1. const:", pi);
+// 3. Return student fee
+function calculateFee(fee) {
+    return fee;
+}
+let studentFee = calculateFee(50000);
+console.log("Student Fee:", studentFee);
 
-// 2. Variables and data types
-let name = "Saravanan";
-let age = 20;
-let programmingKnowledge = true;
+// 4. Calculate discount on ₹200,000
+function discount(percent) {
+    let fee = 200000;
+    let discountAmount = fee * percent / 100;
+    let finalFee = fee - discountAmount;
+    console.log("Discount:", discountAmount);
+    console.log("Final Fee:", finalFee);
+}
+discount(10);
 
-console.log("2. Name:", name, typeof name);
-console.log("2. Age:", age, typeof age);
-console.log("2. Programming knowledge:", programmingKnowledge, typeof programmingKnowledge);
+// 5. Default parameter
+function studentForm(name, age, disability = "no") {
+    console.log(name, age, disability);
+}
+studentForm("Arun", 20, "yes");
+studentForm("Kumar", 21, "no");
+studentForm("Priya", 19);
 
-// 3. Array of fruits
-let fruits = ["Apple", "Mango", "Banana", "Orange", "Grapes"];
 
-console.log("3. Fruits:", fruits);
-console.log("3. First fruit:", fruits[0]);
-console.log("3. Last fruit:", fruits[fruits.length - 1]);
+console.log("\n========== PART 2: FUNCTION TYPES AND SCOPE ==========");
 
-// 4. Student object
-let studentDetails = {
-    name: "Saravanan",
-    role: "Full Stack Developer",
-    cgpa: 8.5
+// 6. Named function
+function displayMessage(message) {
+    console.log(message);
+}
+displayMessage("Hello JavaScript");
+
+// 7. Anonymous function
+const printName = function(name) {
+    console.log(name);
 };
+printName("Saravanan");
 
-console.log("4. Name:", studentDetails.name);
-console.log("4. Role:", studentDetails.role);
-console.log("4. CGPA:", studentDetails.cgpa);
-
-// 5. User input (browser only)
-// let userName = prompt("Enter your name");
-// let userAge = prompt("Enter your age");
-// alert("Your name is " + userName);
-// console.log("Age:", userAge);
-
-
-// Part 2: Operators
-
-// 6. Arithmetic operators  
-let a = 15;
-let b = 4;
-
-console.log("6. Addition:", a + b);
-console.log("6. Subtraction:", a - b);
-console.log("6. Multiplication:", a * b);
-console.log("6. Division:", a / b);
-console.log("6. Modulus:", a % b);
-console.log("6. Exponentiation:", a ** b);
-
-// 7. Post-increment and pre-increment
-let q7 = 5;
-console.log("7.", q7++);
-console.log("7.", q7);
-console.log("7.", ++q7);
-
-// 8. Post-decrement and pre-decrement
-let q8 = 10;
-let b8 = q8--;
-let c8 = --q8;
-
-console.log("8. a:", q8);
-console.log("8. b:", b8);
-console.log("8. c:", c8);
-
-// 9. Assignment operators
-let value = 20;
-
-value += 5;
-console.log("9. After +=:", value);
-
-value -= 3;
-console.log("9. After -=:", value);
-
-value *= 2;
-console.log("9. After *=:", value);
-
-value /= 4;
-console.log("9. After /=:", value);
-
-value %= 3;
-console.log("9. After %=:", value);
-
-// 10. Comparison operators
-console.log("10.", 5 == "5");
-console.log("10.", 5 === "5");
-console.log("10.", 10 != "10");
-console.log("10.", 10 !== "10");
-
-// 11. Logical operators
-let hasID = true;
-let isAdult = true;
-let isStudent = false;
-
-console.log("11. AND:", hasID && isAdult);
-console.log("11. OR:", isAdult || isStudent);
-console.log("11. NOT:", !hasID);
-
-// 12. Ternary operator
-let userAge = 20;
-let ageMessage = userAge >= 18 ? "You are eligible" : "You are not eligible";
-
-console.log("12.", ageMessage);
-
-
-// Part 3: Type Casting and Conditions
-
-// 13. Data types of expressions
-console.log("13.", typeof ("hello" + 10));
-console.log("13.", typeof (10 + true));
-console.log("13.", typeof (10 + null));
-console.log("13.", typeof ("hello" + undefined));
-
-// 14. Convert input into a number (browser only)
-// let inputNumber = Number(prompt("Enter a number"));
-// console.log("14. Result:", inputNumber + 10);
-
-// 15. Boolean conversion
-console.log("15. Empty string:", Boolean(""));
-console.log("15. Non-empty string:", Boolean("Hello"));
-console.log("15. Zero:", Boolean(0));
-console.log("15. True:", Boolean(true));
-
-// 16. Positive or not
-let checkNumber = 12;
-
-if (checkNumber > 0) {
-    console.log("16. Positive number");
-} else {
-    console.log("16. Zero or negative number");
-}
-
-// 17. Time-based messages (24-hour format)
-let time = 14;
-
-if (time >= 4 && time < 6) {
-    console.log("17. Early morning");
-} else if (time >= 6 && time < 12) {
-    console.log("17. Morning");
-} else if (time >= 12 && time < 16) {
-    console.log("17. Afternoon");
-} else if (time >= 16 && time < 20) {
-    console.log("17. Evening");
-} else if ((time >= 20 && time <= 23) || (time >= 0 && time < 4)) {
-    console.log("17. Night");
-} else {
-    console.log("17. Invalid time");
-}
-
-// 18. Nested if for eligibility
-let candidateAge = 20;
-let height = 175;
-let weight = 65;
-
-if (candidateAge >= 18) {
-    if (height >= 160) {
-        if (weight >= 50) {
-            console.log("18. Eligible");
-        } else {
-            console.log("18. Weight requirement not met");
-        }
-    } else {
-        console.log("18. Height requirement not met");
-    }
-} else {
-    console.log("18. Age requirement not met");
-}
-
-
-// Part 4: Switch and Loops
-
-// 19. Traffic light
-let color = "green";
-
-switch (color.toLowerCase()) {
-    case "red":
-        console.log("19. Stop");
-        break;
-    case "yellow":
-        console.log("19. Get ready");
-        break;
-    case "green":
-        console.log("19. Go");
-        break;
-    default:
-        console.log("19. Invalid traffic light color");
-}
-
-// 20. Print numbers from 1 to 20
-for (let i = 1; i <= 20; i++) {
-    console.log("20.", i);
-}
-
-// 21. Even numbers from 2 to 20
-for (let i = 2; i <= 20; i += 2) {
-    console.log("21.", i);
-}
-
-// 22. While loop from 10 to 1
-let count = 10;
-
-while (count >= 1) {
-    console.log("22.", count);
-    count--;
-}
-
-// 23. Do-while loop from 1 to 10
-let j = 1;
-
-do {
-    console.log("23.", j);
-    j++;
-} while (j <= 10);
-
-// 24. Print each character
-for (let char of "JavaScript") {
-    console.log("24.", char);
-}
-
-// 25. Print student names
-let students = ["Priya", "Arun", "Kumar", "Divya", "Ravi"];
-
-for (let studentName of students) {
-    console.log("25.", studentName);
-}
-
-// 26. Print object keys and values
-let student = {
-    name: "Priya",
-    role: "Frontend Developer",
-    cgpa: 9
+// 8. Arrow function
+const printNumber = (number) => {
+    console.log(number);
 };
+printNumber(100);
 
-for (let key in student) {
-    console.log("26.", key + ":", student[key]);
-}
+// 9. var, let and const scope
+function checkScope() {
+    if (true) {
+        var a = 10;
+        let b = 20;
+        const c = 30;
 
-
-// Part 5: Mixed Practice
-
-// 27. Two numbers and arithmetic operations (browser only)
-// let firstNumber = Number(prompt("Enter the first number"));
-// let secondNumber = Number(prompt("Enter the second number"));
-// console.log("27. Sum:", firstNumber + secondNumber);
-// console.log("27. Difference:", firstNumber - secondNumber);
-// console.log("27. Product:", firstNumber * secondNumber);
-// console.log("27. Remainder:", firstNumber % secondNumber);
-
-// 28. Print numbers greater than 10
-let numbers = [5, 12, 8, 25, 15];
-
-for (let num of numbers) {
-    if (num > 10) {
-        console.log("28.", num);
+        console.log("Inside block:", a, b, c);
     }
+
+    console.log("Outside block, var:", a);
+    // b and c cannot be accessed outside the if block.
+}
+checkScope();
+
+// 10. Hoisting
+console.log("Hoisting output:");
+console.log(value);
+var value = 10;
+
+
+console.log("\n========== PART 3: CALLBACKS AND HIGHER-ORDER FUNCTIONS ==========");
+
+// 11. Callback
+function second() {
+    console.log("Second function executed");
+}
+function first(callback) {
+    console.log("First function executed");
+    callback();
+}
+first(second);
+
+// 12. Add and call callback
+function add(callback, a, b) {
+    console.log("Sum:", a + b);
+    callback(a, b);
+}
+function showNumbers(a, b) {
+    console.log("Numbers:", a, b);
+}
+add(showNumbers, 10, 5);
+
+// 13. Subtraction callback
+const sub = (num1, num2) => {
+    console.log("Subtraction:", num1 - num2);
+};
+function addForSub(callback, a, b) {
+    console.log("Addition:", a + b);
+    callback(a, b);
+}
+addForSub(sub, 20, 8);
+
+// 14. Multiplication callback
+function multiply(callback, a, b) {
+    console.log("Multiplication:", a * b);
+    callback();
+}
+function multiplicationMessage() {
+    console.log("Multiplication completed");
+}
+multiply(multiplicationMessage, 5, 4);
+
+// 15. Division callback
+function divide(num1, num2) {
+    if (num2 === 0) {
+        console.log("Cannot divide by zero");
+        return;
+    }
+    console.log("Division:", num1 / num2);
+}
+function calculate(callback, a, b) {
+    callback(a, b);
+}
+calculate(divide, 20, 4);
+
+// 16. Higher-order function
+function processStudent(callback) {
+    callback("Saravanan");
+}
+function displayStudent(name) {
+    console.log("Student Name:", name);
+}
+processStudent(displayStudent);
+
+
+console.log("\n========== PART 4: GENERATOR FUNCTIONS ==========");
+
+// 17. Cashback generator
+function* cashbackOffers() {
+    yield "10% cashback";
+    yield "30% cashback";
+    yield "Better luck next time";
+}
+const offers = cashbackOffers();
+console.log(offers.next().value);
+console.log(offers.next().value);
+console.log(offers.next().value);
+
+// 18. Call next() three times
+function* numbers() {
+    yield 10;
+    yield 20;
+    yield 30;
+}
+const numberGenerator = numbers();
+console.log(numberGenerator.next());
+console.log(numberGenerator.next());
+console.log(numberGenerator.next());
+
+// 19. Five discount messages using for-of
+function* discountOffersList() {
+    yield "5% discount";
+    yield "10% discount";
+    yield "15% discount";
+    yield "20% discount";
+    yield "No discount";
+}
+for (const offer of discountOffersList()) {
+    console.log(offer);
 }
 
-// 29. Check age eligibility (browser only)
-// let ageInput = Number(prompt("Enter your age"));
-// if (ageInput >= 18) {
-//     alert("You are eligible");
-// } else {
-//     alert("You are not eligible");
-// }
+// 20. Three student names using for-of
+function* studentNames() {
+    yield "Arun";
+    yield "Kumar";
+    yield "Priya";
+}
+for (const name of studentNames()) {
+    console.log(name);
+}
 
-// 30. Calculator menu (browser only)
-// let operation = prompt("Choose: addition, subtraction, multiplication, division");
-// let first = Number(prompt("Enter the first number"));
-// let second = Number(prompt("Enter the second number"));
-// let answer;
-//
-// switch (operation.toLowerCase()) {
-//     case "addition":
-//         answer = first + second;
-//         break;
-//     case "subtraction":
-//         answer = first - second;
-//         break;
-//     case "multiplication":
-//         answer = first * second;
-//         break;
-//     case "division":
-//         answer = second !== 0 ? first / second : "Cannot divide by zero";
-//         break;
-//     default:
-//         answer = "Invalid operation";
-// }
-//
-// alert("Result: " + answer);
-// console.log("30. Result:", answer);
+// 21. Four yields and check done
+function* fourValues() {
+    yield 10;
+    yield 20;
+    yield 30;
+    yield 40;
+}
+const generator = fourValues();
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+
+
+console.log("\n========== PART 5: CURRYING AND UNCURRYING ==========");
+
+// 22. Normal add function
+function normalAdd(a, b, c) {
+    console.log("Normal sum:", a + b + c);
+}
+normalAdd(5, 10, 15);
+
+// 23. Curried add function
+function curriedAdd(a) {
+    return function(b) {
+        return function(c) {
+            return a + b + c;
+        };
+    };
+}
+console.log("Curried sum:", curriedAdd(5)(10)(15));
+
+// 24. Curried function using arrow syntax
+const calculateSum = (a) => (b) => (c) => a + b + c;
+console.log("Arrow curried sum:", calculateSum(5)(10)(15));
+
+// 25. Product price, discount and quantity
+function calculateTotal(price) {
+    return function(discountPercent) {
+        return function(quantity) {
+            const discountedPrice =
+                price - (price * discountPercent / 100);
+            return discountedPrice * quantity;
+        };
+    };
+}
+console.log("Total Product Price:", calculateTotal(1000)(10)(3));
+
+// 26. Compare normal and curried functions
+function normalFunction(a, b, c) {
+    return a + b + c;
+}
+function curriedFunction(a) {
+    return function(b) {
+        return function(c) {
+            return a + b + c;
+        };
+    };
+}
+console.log("Normal:", normalFunction(5, 10, 15));
+console.log("Curried:", curriedFunction(5)(10)(15));
+
+
+console.log("\n========== PART 6: IIFE, RETURN AND MIXED PRACTICE ==========");
+
+// 27. IIFE sale message
+(function(productName, discountPercent) {
+    console.log(
+        `${productName} is available at ${discountPercent}% discount!`
+    );
+})("Laptop", 15);
+
+// 28. Return a number
+function getNumber() {
+    return 100;
+}
+const returnedNumber = getNumber();
+console.log("Returned Number:", returnedNumber);
+
+// 29. Return student marks
+function getMarks(marks) {
+    return marks;
+}
+const studentMarks = getMarks(85);
+console.log("Student Marks:", studentMarks);
+
+// 30. Student fee calculator with default parameter and callback
+function calculateStudentFee(fee = 200000, callback) {
+    const discountAmount = callback(fee);
+    const finalFee = fee - discountAmount;
+    return finalFee;
+}
+function calculateStudentDiscount(fee) {
+    return fee * 10 / 100;
+}
+const finalFee = calculateStudentFee(
+    undefined,
+    calculateStudentDiscount
+);
+console.log("Final Student Fee:", finalFee);
+
+console.log("\n========== ALL 30 QUESTIONS COMPLETED ==========");
